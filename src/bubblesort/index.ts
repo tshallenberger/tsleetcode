@@ -7,7 +7,6 @@ export function bubbleSort(arr: number[]): number[] {
     for (let j = 0; j < n - i - 1; j++) {
       const k = j + 1;
       if (arr[j] > arr[k]) {
-        // swap arr, j, j + 1
         swap(arr, j, k);
       }
     }
