@@ -62,6 +62,77 @@ export class BSTree {
 
     return false;
   }
+  public addNode_r(value: number): boolean {
+    // Create new Node
+    // Check to see if root is null
+    // If root not null, traverse tree from root node until correct spot is found
+    // TraverseTree:
+    //  Create temp = root
+    //    if newNode == temp, return; duplicate found
+    //  if newNode < temp
+    //    check if temp.left exists
+    //      if temp.left, TraverseTree(left)
+    //      else temp.left = newNode
+    //  if newNode > temp
+    //    check if temp.right exists
+    //      if (temp.right) TraverseTree(right)
+    //      else temp.right = newNode
+
+    const newNode: TreeNode = new BTreeNode(value);
+    if (!this._root) {
+      this._root = newNode;
+      return true;
+    }
+    let currentNode = this._root;
+    let traversing = true;
+
+    while (traversing) {
+      if (newNode.value == currentNode.value) {
+        traversing = false;
+        return false;
+      } else if (newNode.value < currentNode.value) {
+        if (!currentNode.left) {
+          currentNode.left = newNode;
+          traversing = false;
+          return true;
+        } else {
+          currentNode = currentNode.left;
+        }
+      } else if (newNode.value > currentNode.value) {
+        if (!currentNode.right) {
+          currentNode.right = newNode;
+          traversing = false;
+          return true;
+        } else {
+          currentNode = currentNode.right;
+        }
+      }
+    }
+    // function _traverse(newNode: BTreeNode, current: BTreeNode): boolean {
+    //   if (newNode?.value == current?.value) {
+    //     return false;
+    //   }
+
+    //   if (newNode.value < current.value) {
+    //     if (!current.left) {
+    //       current.left = newNode;
+    //       return false;
+    //     } else {
+    //       return _traverse(newNode, current.left);
+    //     }
+    //   }
+    //   if (newNode.value > current.value) {
+    //     if (!current.right) {
+    //       current.right = newNode;
+    //       return false;
+    //     } else {
+    //       return _traverse(newNode, current.right);
+    //     }
+    //   }
+    // }
+
+    return false;
+  }
 
   /**
    * Create queue to hold nodes to be visited
