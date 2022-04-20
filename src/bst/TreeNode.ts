@@ -1,9 +1,9 @@
 export class BTreeNode {
   private _value: number;
-  public get value(): number {
+  public get val(): number {
     return this._value;
   }
-  public set value(value: number) {
+  public set val(value: number) {
     this._value = value;
   }
 

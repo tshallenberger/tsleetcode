@@ -38,10 +38,10 @@ export class BSTree {
     let traversing = true;
 
     while (traversing) {
-      if (newNode.value == currentNode.value) {
+      if (newNode.val == currentNode.val) {
         traversing = false;
         return false;
-      } else if (newNode.value < currentNode.value) {
+      } else if (newNode.val < currentNode.val) {
         if (!currentNode.left) {
           currentNode.left = newNode;
           traversing = false;
@@ -49,7 +49,7 @@ export class BSTree {
         } else {
           currentNode = currentNode.left;
         }
-      } else if (newNode.value > currentNode.value) {
+      } else if (newNode.val > currentNode.val) {
         if (!currentNode.right) {
           currentNode.right = newNode;
           traversing = false;
@@ -87,10 +87,10 @@ export class BSTree {
     let traversing = true;
 
     while (traversing) {
-      if (newNode.value == currentNode.value) {
+      if (newNode.val == currentNode.val) {
         traversing = false;
         return false;
-      } else if (newNode.value < currentNode.value) {
+      } else if (newNode.val < currentNode.val) {
         if (!currentNode.left) {
           currentNode.left = newNode;
           traversing = false;
@@ -98,7 +98,7 @@ export class BSTree {
         } else {
           currentNode = currentNode.left;
         }
-      } else if (newNode.value > currentNode.value) {
+      } else if (newNode.val > currentNode.val) {
         if (!currentNode.right) {
           currentNode.right = newNode;
           traversing = false;
@@ -152,7 +152,7 @@ export class BSTree {
       while (q.length !== 0) {
         const current = q.shift(); // pops off beginning
         if (current) {
-          visited.push(current.value);
+          visited.push(current.val);
           if (current.left) {
             q.push(current.left);
           }
@@ -184,7 +184,7 @@ export class BSTree {
       while (stack.length !== 0) {
         const current = stack.pop();
         if (current) {
-          visited.push(current.value);
+          visited.push(current.val);
           if (current.right) stack.push(current.right);
           if (current.left) stack.push(current.left);
         }
@@ -207,7 +207,7 @@ export class BSTree {
       if (!node) {
         return;
       }
-      visited.push(node.value);
+      visited.push(node.val);
       if (node.left) _traverse(node.left);
       if (node.right) _traverse(node.right);
     }
