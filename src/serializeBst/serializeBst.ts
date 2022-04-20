@@ -78,3 +78,8 @@ export var deserialize = function (data: string): TreeNode {
  * deserialize(serialize(root));
  */
 
+ const root = new TreeNode(2);
+ root.left = new TreeNode(1);
+ root.right = new TreeNode(3);
+ const res = deserialize(serialize(root));
+ console.log(res);
