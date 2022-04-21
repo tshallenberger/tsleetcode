@@ -1,8 +1,8 @@
 function validPalindrome(s: string): boolean {
-  const sln = new Solution();
+  const sln = new PSolution();
   return sln.validPalindrome(s);
 }
-class Solution {
+class PSolution {
   private checkPalindrome(s: string, i: number, j: number): boolean {
     while (i < j) {
       if (s.charAt(i) != s.charAt(j)) {
