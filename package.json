@@ -19,6 +19,7 @@
   "scripts": {
     "cli": "yarn run build & ts-node src/cli.ts",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "start": "ts-node ./src/index.ts",
     "test": "jest",
     "clean": "rm -rf dist build package",
     "ts-node": "ts-node",
